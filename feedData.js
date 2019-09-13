@@ -1,4 +1,5 @@
-import uuid from "uuid/v1";
+// import uuid from "uuid/v1";
+// assume uuid is already on the page
 
 const MAX_OLD_ITEMS_COUNT = 5;
 const MAX_GENERATED_FEED_LENGTH = MAX_OLD_ITEMS_COUNT + 3 + 5;
