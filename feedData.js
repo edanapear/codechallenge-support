@@ -11,7 +11,7 @@ const MAX_GENERATED_FEED_LENGTH = MAX_OLD_ITEMS_COUNT + 3 + 5;
 const GENERATE_INTERVAL = 3000;
 const icons = ["image", "work", "beach"];
 
-export const stubbedData = [
+const stubbedData = [
   {
     content: "Some Image",
     icon: "image",
@@ -94,9 +94,9 @@ const feedGenerator = (generateInterval = GENERATE_INTERVAL) => {
   };
 };
 
-export const pseudoLiveFeed = feedGenerator();
+const pseudoLiveFeed = feedGenerator();
 
-export function subscribeToNewFeedPosts(timeStamp, onChangeCallback) {
+function subscribeToNewFeedPosts(timeStamp, onChangeCallback) {
   pseudoLiveFeed.subscribeWithCallback(timeStamp, onChangeCallback);
   return () => pseudoLiveFeed.unsubscribe();
 }
@@ -137,7 +137,7 @@ function getDate(seconds = 0) {
   return +date + seconds;
 }
 
-export function loadFeedPosts(time, postCountLimit) {
+function loadFeedPosts(time, postCountLimit) {
   console.log("postCountLimit", postCountLimit);
   return new Promise((resolve, reject) =>
     resolve(pseudoLiveFeed.getOlderDataByTimestamp(time, postCountLimit))
@@ -158,7 +158,7 @@ function getOlderDataByTimestamp(data, timeStamp, count) {
     });
 }
 
-export function getPostsByTime(time, postCountLimit) {
+function getPostsByTime(time, postCountLimit) {
   return getOlderDataByTimestamp(stubbedData, time, postCountLimit);
 }
 
@@ -166,3 +166,12 @@ function getRandomFromList(list) {
   const listLength = list.length;
   return list[Math.floor(Math.random() * listLength)];
 }
+
+
+return {
+  stubbedData,
+  getPostsByTime,
+  loadFeedPosts,
+  pseudoLiveFeed,
+  subscribeToNewFeedPosts,
+};
