@@ -1,6 +1,11 @@
 // import uuid from "uuid/v1";
 // assume uuid is already on the page
 
+let uuidCount = 0;
+function uuid () {
+  return uuidCount++;
+}
+
 const MAX_OLD_ITEMS_COUNT = 5;
 const MAX_GENERATED_FEED_LENGTH = MAX_OLD_ITEMS_COUNT + 3 + 5;
 const GENERATE_INTERVAL = 3000;
