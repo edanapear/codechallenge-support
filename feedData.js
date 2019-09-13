@@ -9,6 +9,8 @@ define(
     //arguments to this function are the array of dependencies mentioned
     //above.
     function () {
+        
+        console.log('feedData file');
 
       // import uuid from "uuid/v1";
       // assume uuid is already on the page
