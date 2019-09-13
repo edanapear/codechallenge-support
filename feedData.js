@@ -168,10 +168,10 @@ function getRandomFromList(list) {
 }
 
 
-return {
-  stubbedData,
-  getPostsByTime,
-  loadFeedPosts,
-  pseudoLiveFeed,
-  subscribeToNewFeedPosts,
-};
+// return {
+//   stubbedData,
+//   getPostsByTime,
+//   loadFeedPosts,
+//   pseudoLiveFeed,
+//   subscribeToNewFeedPosts,
+// };
