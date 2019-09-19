@@ -1,9 +1,11 @@
 // import uuid from "uuid/v1";
 // assume uuid is already on the page
 function feedDataModule () {
-    let uuidCount = 0;
-    function uuid () {
-      return uuidCount++;
+    function uuid() {
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+      });
     }
 
     const MAX_OLD_ITEMS_COUNT = 5;
