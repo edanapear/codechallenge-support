@@ -12,6 +12,7 @@ function feedDataModule () {
     const MAX_GENERATED_FEED_LENGTH = MAX_OLD_ITEMS_COUNT + 3 + 5;
     const GENERATE_INTERVAL = 3000;
     const icons = ["image", "work", "beach"];
+    const authorList = ["Danny T", "John S", "Tyrion L"];
 
     const stubbedData = [
       {
@@ -125,11 +126,12 @@ function feedDataModule () {
     function createNewPost() {
       const date = getDate();
       const icon = getRandomFromList(icons);
+      const author = getRandomFromList(authorList);
       return {
         content: `NEW ${icon} post`,
         icon,
         date,
-        author: "[autogen]",
+        author,
         uuid: uuid()
       };
     }
